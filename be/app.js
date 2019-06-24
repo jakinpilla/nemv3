@@ -35,3 +35,34 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+const mongoose = require('mongoose')
+const User = require('./models/users')
+
+mongoose.connect('mongodb://localhost:27017/nemv', { useNewUrlParser: true });
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error'));
+db.once('open', function() {
+  console.log('mongoose connected')
+
+  // User.deleteMany()
+  //  .then( r => console.log(r))
+  //   .catch(e => console.error(e))
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
