@@ -216,7 +216,7 @@
     methods: {
 
         getReq () {
-          axios.get('http://localhost:3000/api/user', {
+          axios.get('/api/user', {
             user: 'getMan'
             })
             .then((r) => {
@@ -228,7 +228,7 @@
          },
 
         postReq () {
-          axios.post('http://localhost:3000/api/user', {
+          axios.post('/api/user', {
             name: 'jakin', age: 40
             })
             .then((r) => {
@@ -240,7 +240,7 @@
           },
 
         putReq () {
-          axios.put('http://localhost:3000/api/user', {
+          axios.put('/api/user', {
             user: 'putMan'
             })
             .then((r) => {
@@ -252,7 +252,7 @@
         },
 
         delReq () {
-          axios.delete('http://localhost:3000/api/user', {
+          axios.delete('/api/user', {
             user: 'delMan'
             })
             .then((r) => {
