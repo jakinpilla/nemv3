@@ -274,7 +274,7 @@
           // console.log(this.userName, this.userAge)
           this.dialog = false
 
-          axios.post('http://localhost:3000/api/user', {
+          axios.post('/api/user', {
               name: this.userName, age: this.userAge
             })
             .then((r) => {
@@ -288,7 +288,7 @@
         },
 
         getUsers () { 
-          axios.get('http://localhost:3000/api/user')
+          axios.get('/api/user')
             .then((r) => {
               console.log(r.data)
               this.users = r.data.users
@@ -307,7 +307,7 @@
 
         putUser () {
           this.dialog = false
-          axios.put(`http://localhost:3000/api/user/${this.putId}`, {
+          axios.put(`/api/user/${this.putId}`, {
             name: this.userName, age: this.userAge
           })
             .then((r) =>  {
@@ -320,7 +320,7 @@
         },
 
         delUser (id) {
-          axios.delete(`http://localhost:3000/api/user/${id}`)
+          axios.delete(`/api/user/${id}`)
             .then((r) => {
               this.pop('사용자 삭제 완료')
               this.getUsers()
