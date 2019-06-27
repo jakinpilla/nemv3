@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development PORT=3000 node ./be/bin/www",
     "serve": "cd fe && yarn serve",
-    "pr": "cd fe && yarn && yarn build && yarn serve && cd ../be && yarn && cd .. && cross-env NODE_ENV=production PORT=80 node ./be/bin/www"
+    "pr": "cd fe && yarn && yarn build && cd ../be && yarn && NODE_ENV=production PORT=80 node ./bin/www",
+    "pm2": "cd fe && yarn && yarn build && cd ../be && yarn && yarn start && cd .. && pm2 start --env pr"
   },
   "dependencies": {
     "cross-env": "^5.2.0"
