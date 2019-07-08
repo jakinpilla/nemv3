@@ -39,6 +39,8 @@ module.exports = app;
 const mongoose = require('mongoose')
 const User = require('./models/users')
 
+console.log(`${process.env.NODE_ENV} started!`)
+
 mongoose.connect('mongodb://localhost:27017/nemv', { useNewUrlParser: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
@@ -51,24 +53,28 @@ db.once('open', function() {
 
 });
 
-module.exports = app;
-
 var jwt = require('jsonwebtoken');
 const key = "베리베리어려운키"
-var token = jwt.sign({ id: 'jakinpilla', email: 'jakinpilla@xxx.com' }, key);
-console.log(token)
+// var token = jwt.sign({ id: 'jakinpilla', email: 'jakinpilla@xxx.com' }, key);
+// console.log(token)
 
-var decoded = jwt.verify(token, key) //, (err, r) => {
-//   if (err) return console.log(err)
-// });
-console.log(decoded)
-console.log(new Date(decoded.iat * 10000))
-
-
+// var decoded = jwt.verify(token, key) //, (err, r) => {
+// //   if (err) return console.log(err)
+// // });
+// console.log(decoded)
+// console.log(new Date(decoded.iat * 10000))
 
 
+// User.deleteMany({})
+// .then(r => console.log(r))
+// .catch(err => console.error(err))
 
 
+const pkg = require('../package.json')
+console.log(pkg)
+
+
+module.exports = app;
 
 
 

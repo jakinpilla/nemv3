@@ -1,7 +1,11 @@
-// dbUrl: mongodb://localhost:27017/nemv',
+// dbUrl: mongodb://localhost:27017/nemv
 
-admin: {
-    id: 'jakin',
-    pwd: '3912',
-    name: '관리자'
+// admin: {
+//     "id": 'jakin',
+//     "pwd": '3912',
+//     "name": '관리자'
+// }
+
+module.exports = {
+    dbUrl: 'mongodb://localhost:27017/nemv',
 }
